@@ -1,0 +1,37 @@
+// variables
+
+// color
+
+$white: #ffffff;
+$black: #353535;
+$all-black: #000000;
+$grey: #EFEFEF;
+$primary: #FAA500;
+$secondary: scale-color($primary, $lightness: -30%);
+
+//product colors
+$brown: #DEAC71;
+$soft-red: #D37164;
+$light-blue: #6497D3;
+$dark-blue: #3C3B79;
+$dark-black: #1C1A19;
+$dark-red: #D84E4B;
+$soft-amber: #CFC9B0;
+$dark-white: #EAE9E5;
+
+// transition
+
+$transition: all .3s ease-in-out;
+
+// opacity
+$opacity: .5;
+
+// border
+$border-primary: 1px solid $primary;
+$border-black: 1px solid $black;
+
+// box-shadow
+$box-shadow: 0px 4px 6px 0px #00000014;
+
+//shadow-background
+$black-opacity: #000000b3;

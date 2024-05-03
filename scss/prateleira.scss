@@ -1,0 +1,93 @@
+.prateleira {
+    .container {
+        position: relative;
+        ul {
+            .slick-track {
+                display: flex !important;
+            }
+            li {
+                height: inherit;
+                margin: 0 8px;
+                @include flex(wrap, flex-start, space-between, 0);
+                flex-direction: column;
+                img {
+                    width: 100%;
+                }
+                & > div {
+                    @include flex(wrap, flex-start, space-between, 8px);
+                    flex-direction: column;
+                    flex-grow: 1;
+                    padding: 8px 27px 0 27px;
+                    h4 {
+                        margin: 0;
+                        color: $all-black;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 24.34px;
+                    }
+                    
+                    a.btn {
+                        @include flex(nowrap, center, center, 0);
+                        height: 35px;
+                        padding: 0;
+                        font-size: 16px;
+                        line-height: 24.34px;
+                        border-radius: 4px;
+                        width: 100%;
+                        font-weight: 400;
+                    }
+                    
+                    p {
+                        &.description {
+                            color: $all-black;
+                            opacity: .5;
+                        }
+                        
+                        &.price {
+                            font-size: 20px;
+                            font-weight: 700;
+                            line-height: 24px;
+                        }
+                    }
+                    
+                    .colors {
+                        @include flex(nowrap, flex-start, flex-start, 8px);
+                        a {
+                            display: block;
+                            width: 27px;
+                            height: 27px;
+                            border-radius: 4px;
+                            border: 1px solid transparent;
+                            &.active,
+                            &:hover {
+                                border: $border-black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .wrap-arrows {
+            .arrows {
+                max-width: calc(100% - 16px);
+            }
+        }
+    }
+}
+
+@media (max-width: 992px)  {
+    .prateleira {
+        .slick-list{
+            padding: 0 10% 0 0 !important;
+        }
+        .container {
+            padding-right: 0;
+            padding-left: 16px;
+            .wrap-arrows {
+                .arrows {
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.banner {
+    .container {
+        @include flex(wrap, center, space-between, 64px);
+        .text {
+            width: calc(28% - 32px);
+            p {
+                @include font(14px, 21.29px);
+            }
+        }
+        .image {
+            width: calc(72% - 32px);
+            img {
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1175px) {
+    .banner {
+        .container {
+            .text {
+                width: calc(40% - 32px);
+            }
+            .image {
+                width: calc(60% - 32px);
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .banner {
+        h3 {
+            color: $all-black;
+        }
+        p {
+            color: $all-black;
+        }
+        .container {
+            gap: 24px;
+            .text {
+                width: 100%;
+            }
+            .image {
+                width: 100%;
+            }
+        }
+    }
+}

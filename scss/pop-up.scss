@@ -1,0 +1,101 @@
+.wrap-pop-up {
+    @include flex(nowrap, center, center, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background: $black-opacity;    
+    .wrap {
+        text-align: right;
+        .close {
+            color: $white;
+            font-family: "Lato", sans-serif;
+            font-size: 12px;
+            line-height: 20px;
+            text-align: right;
+            text-transform: uppercase;
+            margin-bottom: 6.36px;
+            display: block;
+        }
+        .pop-up {
+            @include flex(nowrap, center, center, 0);
+            background: $white;
+            min-width: 848px;
+            .text {
+                padding: 0 51px;
+                text-align: center;
+                flex-grow: 1;
+                &> svg {
+                    margin-bottom: 12.71px;
+                    &+ p {
+                        font-size: 12px;
+                        line-height: 20px;
+                        text-transform: uppercase;
+                        margin-bottom: 12.71px;
+                        color: #464B54;
+                    }
+                }
+                p {
+                    font-size: 20px;
+                    line-height: 23px;
+                    color: #787D83;
+                    margin-bottom: 25.42px;
+                    strong {
+                        font-weight: 700;
+                        display: block;
+                    }    
+                }
+                form {
+                    input {
+                        margin-bottom: 10.13px;
+                        width: calc(100% - 28px);
+                        border: 1px solid #C4C4C4;
+                        border-radius: 10px;
+                        padding: 10px 13px;
+                        &::placeholder {
+                            @include font(12px, 20px);
+                            font-weight: 400;
+                            color: #787D83;
+                        }
+                    }
+                    
+                    .btn {
+                        @include flex(nowrap, center, center, 8px);
+                        @include font(12px, 20px);
+                        width: 100%;
+                        height: 40px;
+                        border-radius: 10px;
+                        text-transform: uppercase;
+                        &:hover {
+                            svg {
+                                path {
+                                    fill: $primary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .wrap-pop-up {
+        .wrap {
+            width: 85%;
+            .pop-up {
+                min-width: 0;
+                .text {
+                    padding: 40px 20px 24.36px 20px;
+                    p {
+                        font-size: 16px;
+                        line-height: 23px;
+                    }
+                }
+            }
+        }
+    }
+}
