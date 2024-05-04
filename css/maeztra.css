@@ -197,6 +197,11 @@ section {
   bottom: 0;
   z-index: 1;
 }
+.slick-dots li {
+  width: auto;
+  height: auto;
+  margin: 0 8px;
+}
 .slick-dots li.slick-active button {
   background: #FAA500;
 }
@@ -287,6 +292,10 @@ section {
     line-height: 17.07px;
     padding: 5px 13px;
     font-weight: bold;
+  }
+  .slick-dots li button {
+    width: 8px;
+    height: 8px;
   }
 }
 header .tipbar {
@@ -382,6 +391,9 @@ header .topo .container .form {
   padding: 24px 0;
   margin-right: 35px;
   flex-grow: 1;
+}
+header .topo .container .form a {
+  display: flex;
 }
 header nav ul {
   display: flex;

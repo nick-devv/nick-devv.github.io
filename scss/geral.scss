@@ -181,6 +181,9 @@ section {
     z-index: 1;
 
     li {
+        width: auto;
+        height: auto;
+        margin: 0 8px;
         &.slick-active {
             button {
                 background: $primary;
@@ -274,5 +277,13 @@ section {
         line-height: 17.07px;
         padding: 5px 13px;
         font-weight: bold;
+    }
+    .slick-dots {
+        li {
+            button {
+                width: 8px;
+                height: 8px;
+            }
+        }
     }
 }

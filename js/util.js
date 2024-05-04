@@ -1,3 +1,25 @@
+function close(){
+    // .wrap-pop-up .wrap .close
+    $('.wrap-pop-up').fadeOut();
+    if (typeof(Storage) !== 'undefined') {
+      sessionStorage.setItem('pop-up', 'fechou');
+    } else {
+      console.log('Desculpe! Web Storage não suportado.')
+    }
+}
+
+function toggle(){
+  // .toggle a
+  $('nav').toggleClass('active');
+}
+
+if ($(window).width() <= 768) {
+  function footer(){
+    // footer .map .container ul li.title a
+    $(this).parent().parent().toggleClass('active');
+  }
+}
+
 $(document).ready(function() {
     if (sessionStorage.getItem("pop-up")) {
       $('.wrap-pop-up').remove();
@@ -35,28 +57,7 @@ $(document).ready(function() {
           }
         ]
     });
-    $(".wrap-pop-up .wrap .close").on("click", function() {
-        $('.wrap-pop-up').fadeOut();
-        if (typeof(Storage) !== "undefined") {
-          // Store
-          sessionStorage.setItem("pop-up", "fechou");
-        } else {
-          console.log('Desculpe! Web Storage não suportado.')
-        }
-    });
-    $(".toggle a").on("click", function() {
-        $('nav').toggleClass('active');
-    });
-    $("footer .map .container ul li.title a").on("click", function() {
-      $(this).parent().parent().toggleClass('active');
-    });
-    var isMobile = $(window).width() <= 768,
-        isTablet = $(window).width() <= 992,
-        isDesktop = $(window).width() >= 1024,
-        isDesktopMed = $(window).width() >= 1200,
-        isDesktopMax = $(window).width() >= 1400;
-
-    if (isTablet) {
+    if ($(window).width() <= 992) {
         $('.thumbs ul').slick({
             infinite: true,
             autoplay: true,

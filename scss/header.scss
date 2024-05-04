@@ -82,6 +82,9 @@ header {
                 padding: 24px 0;
                 margin-right: 35px;
                 flex-grow: 1;
+                a {
+                    display: flex;
+                }
             }
         }
     }
