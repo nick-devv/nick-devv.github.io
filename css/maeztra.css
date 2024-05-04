@@ -429,6 +429,10 @@ header nav ul a:hover {
   }
 }
 @media (max-width: 992px) {
+  header .tipbar p {
+    font-size: 10px;
+    line-height: 18px;
+  }
   header .topo .container {
     gap: 15px;
   }

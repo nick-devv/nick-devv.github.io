@@ -1,35 +1,26 @@
-function close(){
-    // .wrap-pop-up .wrap .close
-    $('.wrap-pop-up').fadeOut();
-    if (typeof(Storage) !== 'undefined') {
-      sessionStorage.setItem('pop-up', 'fechou');
-    } else {
-      console.log('Desculpe! Web Storage não suportado.')
-    }
-}
-
-function toggle(){
-  // .toggle a
-  $('nav').toggleClass('active');
-}
-
-if ($(window).width() <= 768) {
-  function footer(){
-    // footer .map .container ul li.title a
-    $(this).parent().parent().toggleClass('active');
-  }
-}
-
 $(document).ready(function() {
+    // no click do botão fechar do pop-up, fecha-o e salva a informação no 
+    //storage da sessão aberta do navegador, que é limpo quando este é fechado
+    $(".wrap-pop-up .wrap .close").on("click", function() {
+      $('.wrap-pop-up').fadeOut();
+      if (typeof(Storage) !== "undefined") {
+        sessionStorage.setItem("pop-up", "fechou");
+      } else {
+        console.log('Desculpe! Web Storage não suportado.')
+      }
+    });
+    //remove o pop up caso o identifique o localstorage salvo
     if (sessionStorage.getItem("pop-up")) {
       $('.wrap-pop-up').remove();
     }
+    //slick do banner principal
     $('#main-banner ul').slick({
         arrows: true,
         dots: true,
         prevArrow: '.arrows .prev',
         nextArrow: '.arrows .next'
     });
+    //slick da prateleira
     $('.prateleira ul').slick({
         infinite: true,
         slidesToShow: 5,
@@ -58,6 +49,8 @@ $(document).ready(function() {
         ]
     });
     if ($(window).width() <= 992) {
+        // ativa o slick das areas de thumbs no mobile 
+
         $('.thumbs ul').slick({
             infinite: true,
             autoplay: true,
@@ -75,6 +68,16 @@ $(document).ready(function() {
                 }
               }
             ]
+        });
+        
+        // abre e fecha o menu no mobile 
+        $(".toggle a").on("click", function() {
+          $('nav').toggleClass('active');
+        });
+        
+        //abre e fecha menus do footer no mobile
+        $("footer .map .container ul li.title a").on("click", function() {
+          $(this).parent().parent().toggleClass('active');
         });
     }
 });
